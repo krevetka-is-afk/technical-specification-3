@@ -1,10 +1,10 @@
 #let data = (
   // Project code
   // You can find it here: https://ru-ikt.ru/reestrpo
-  code: "12-17", // check if there need to update for personal task
+  code: "12.17", // check if there need to update for personal task
 
   // Project name
-  project_name: "Цифровой Ассистент Студента",
+  project_name: "Цифровой Ассистент Студента: Серверная часть",
   project_name_english: "Digital Student Assistant",
 
   // Students
