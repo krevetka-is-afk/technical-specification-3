@@ -270,11 +270,11 @@ ML-сервис: Python, библиотеки для работы с LLM и ве
             ..column_names.map(col => rotate(0deg, reflow: true, col))
         ),
 
-        [Импорт таблиц (Google/Yandex Sheets, XLSX)], plus, minus, minus, plus,
-        [Семантический поиск и LLM-рекомендации], minus, minus, minus, plus,
-        [Модерация проектов и дедлайны по ОП], minus, plus, minus, plus,
-        [Подача и отслеживание заявок студентов], minus, plus, minus, plus,
-        [Экспорт в LMS/ЕЛК и отчёты], minus, minus, minus, plus,
+        [Импорт таблиц (Google/Yandex Sheets, XLSX)],   minus,  minus,  minus, plus,
+        [Семантический поиск и LLM-рекомендации],       minus,  minus,  minus, plus,
+        [Модерация проектов и дедлайны по ОП],          plus,   plus,   minus, plus,
+        [Подача и отслеживание заявок студентов],       plus,   plus,   minus, plus,
+        [Экспорт в LMS/ЕЛК и отчёты],                   minus,  plus,   minus, plus,
 
         [*Итого*], [*1*], [*2*], [*0*], [*5*],
     )
