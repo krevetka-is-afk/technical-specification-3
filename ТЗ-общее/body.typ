@@ -248,7 +248,7 @@ ML-сервис: Python, библиотеки для работы с LLM и ве
     caption: [Сравнение функциональных характеристик аналогов],
     table(
         columns: (5cm,) + (auto,) * column_names.len(),
-        rows: (15mm, 1.5cm),
+        rows: (2cm, 1.5cm),
         align: center + top,
         table.header(
             [Функции],
