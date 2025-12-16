@@ -193,13 +193,13 @@ API для администратора/ЦППРП:
 === Программные средства
 
 Для серверной части:
-1. Backend на Python (FastAPI) в формате модульного монолита.
+1. Backend на Python 3.12+ (модульный монолит на Django 5+ ASGI или FastAPI).
 2. PostgreSQL с организацией схем по доменам.
-3. Очередь сообщений (RabbitMQ/Redis Streams) для уведомления об изменениях данных.
+3. Очередь сообщений: Kafka (предпочтительно; RabbitMQ или Redis Streams — по согласованию).
 4. Контейнеризация в Docker/Docker Compose, CI/CD через GitHub Actions.
 
 Для клиентской части:
-1. Веб-клиент (SPA) в современных браузерах (Chrome, Firefox, Safari, Edge).
+1. Веб-клиент на Django templates/SSR с HTMX/AlpineJS (современные браузеры: Chrome, Firefox, Safari, Edge).
 2. Использование стандартных API браузера без установки расширений.
 
 === Технические средства
@@ -240,8 +240,8 @@ API для администратора/ЦППРП:
 
 === Требования к исходным кодам и языкам программирования
 
-Клиентская часть: Python 3.11+, Django 5+, Django templates, HTML5, CSS3, JavaScript для динамики; допускается использование HTMX/AlpineJS.\
-Серверная часть: Python 3.11+, FastAPI, библиотеки для работы с PostgreSQL, очередями и интеграциями с внешними сервисами.\
+Клиентская часть: Python 3.12+, Django 5+, Django templates/SSR, HTML5, CSS3, JavaScript для динамики; допускается использование HTMX/AlpineJS.\
+Серверная часть: Python 3.12+, Django 5+ (ASGI) или FastAPI; библиотеки для работы с PostgreSQL, очередями (Kafka как основной брокер, альтернативы по согласованию) и интеграциями с внешними сервисами.\
 Контейнеризация: Docker, Docker Compose.\
 Контроль версий: Git, GitHub.
 Управление зависимостями: pip/venv или Poetry; линтеры/форматирование — flake8/ruff, black/ruff-format для Python, stylelint/prettier (при использовании).
