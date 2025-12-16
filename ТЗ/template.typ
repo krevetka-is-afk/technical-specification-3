@@ -345,12 +345,14 @@
             ]
         )
 
-        
-
         set par(
-            first-line-indent: 2em,
+            first-line-indent: (
+                amount: 2em,
+                all: true,
+            ),
             justify: true,
-            leading: 1em,
+            spacing: 0.65em,
+            leading: 0.65em,
         )
 
         // List style
@@ -363,14 +365,17 @@
         // Enumerated list style
         set enum(
             indent: 2em,
-            spacing: 0.65em
+            spacing: 0.65em,
         )
 
         set heading(numbering: "1.")
 
         show heading.where(level: 1): h => {
             set align(center)
-            set text(weight: "bold", size: 12pt)
+            set text(
+                weight: "bold", 
+                size: 12pt,
+            )
 
             pagebreak(weak: true)
             if h.numbering != none [
@@ -382,7 +387,10 @@
         }
 
         show heading.where(level: 2): h => {
-            set text(weight: "bold", size: 12pt)
+            set text(
+                weight: "bold", 
+                size: 12pt,
+            )
 
             block(inset: (left: 1em))[#counter(heading).display() #h.body]
         }
