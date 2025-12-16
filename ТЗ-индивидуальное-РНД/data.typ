@@ -5,7 +5,7 @@
   code: "12.17",
 
   // Project name
-  project_name: "Цифровой Ассистент Студента",
+  project_name: "Цифровой Ассистент Студента: клиентская часть",
   project_name_english: "Digital Student Assistant",
 
   // Students
