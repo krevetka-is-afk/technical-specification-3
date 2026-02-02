@@ -1,3 +1,4 @@
+#import "data.typ": data
 #let cfg(data) = (
     project: (
         code: [RU.17701729.#data.code ТЗ 01-1],
@@ -6,7 +7,7 @@
         ],
     ),
 
-    students: data.students,
+    student: data.student,
 
     agreed_by: (
         name: data.agreed_by_name,

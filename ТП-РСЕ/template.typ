@@ -3,7 +3,9 @@
     assert(cfg.project != none)
     assert(cfg.project.code != none)
     assert(cfg.project.name != none)
-    assert(cfg.students != none)
+    assert(cfg.student != none)
+    assert(cfg.student.name != none)
+    assert(cfg.student.group != none)
     assert(cfg.agreed_by.name != none)
     assert(cfg.agreed_by.position != none)
     assert(cfg.approved_by.name != none)
@@ -86,7 +88,7 @@
 
             #par(spacing: 0.65em, cfg.project.name)
 
-            Техническое задание
+            Текст программы
 
             ЛИСТ УТВЕРЖДЕНИЯ
 
@@ -96,17 +98,13 @@
         let student_info = align(right)[
             #set par(spacing: 1em)
 
-            Исполнители:
+            Исполнитель:
 
-            #cfg.students.map(
-              student => [
-                Студент группы #student.group
+            Студент группы #cfg.student.group
 
-                #un(13) / #student.name /
-    
-                "#un(3)" #un(15) #cfg.year г.
-              ]
-            ).join[#linebreak() #linebreak()]
+            #un(13) / #cfg.student.name /
+
+            "#un(3)" #un(15) #cfg.year г.
         ]
 
         let bottom_banner = [
@@ -158,7 +156,7 @@
 
             #par(spacing: 0.65em, cfg.project.name)
 
-            Техническое задание
+            Текст программы
 
             #cfg.project.code
 
@@ -345,25 +343,10 @@
             ]
         )
 
-        
-
         set par(
-            first-line-indent: 2em,
+            //first-line-indent: 1em,
             justify: true,
             leading: 1em,
-        )
-
-        // List style
-        set list(
-            indent: 2em,
-            spacing: 0.65em,
-            marker: "-"
-        )
-
-        // Enumerated list style
-        set enum(
-            indent: 2em,
-            spacing: 0.65em
         )
 
         set heading(numbering: "1.")
@@ -384,13 +367,7 @@
         show heading.where(level: 2): h => {
             set text(weight: "bold", size: 12pt)
 
-            block(inset: (left: 1em))[#counter(heading).display() #h.body]
-        }
-        
-        show heading.where(level: 3): h => {
-            set text(weight: "bold", size: 12pt)
-
-            block(inset: (left: 3em))[#counter(heading).display() #h.body]
+            [#counter(heading).display() #h.body]
         }
 
         pagebreak(weak: true)
@@ -398,6 +375,18 @@
         cfg.annotation
 
         outline
+        // set page(
+        //     header: [
+        //         #set align(center)
+        //         #set text(weight: "bold")
+
+        //         #context counter(page).display()
+
+        //         #cfg.project.code
+        //     ]
+        // )
+
+        // counter(page).update(6)
 
         body
     }
